@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.game-container {
+    background: whitesmoke;
+    height: 550px;
+    width: 550px;
+    padding: 30px;
+    border-radius: 15px;
+    display: grid;
+}
