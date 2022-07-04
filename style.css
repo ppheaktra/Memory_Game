@@ -1,32 +1,70 @@
-* {
+* {   
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+
 }
 body {
-    background-color: lightblue;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    min-height: 100vw;
     align-items: center;
     justify-content: center;
+    
+}
+.square .after-view img{
+    max-width: 70px;
 
 }
 .game-container {
-    background-color: whitesmoke;
-    position: relative;
-     height: 550px;
+    height: 550px;
     width: 550px;
+    background-color: khaki;
     border-radius: 15px;
+    padding: 30px;
+
+}
+.squares,
+.square,
+.view {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.squares {
+    height: 100%;
+    width: 100%;
     flex-wrap: wrap;
-
+    justify-content: space-between;
 }
-.start-Again {
-    background-color: darksalmon;
+.squares .square{
+    height: calc(100% / 4 - 5px);
+    width: calc(100% / 4 - 5px);
+    position: relative;
+    perspective: 500px;
+    transform-style: preserve-3d;
+}    
 
+    
 
-
+.squares .square .view{
+    width: 100%;
+    height: 100%;
+    background-color: honeydew;
+    position: absolute;
+    transition: transform .15s linear;
+    backface-visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+    box-shadow: 5px;
 }
-.game-timer {
-    color: red;
-
+.square .after-view {
+    /* display: none; */
+    transform: rotateY(-180deg);
 }
+.square:hover .after-view {
+    transform: rotateY(0);
+}
+.square:hover .before-view {
+    transform: rotateY(180deg);
+}
+
