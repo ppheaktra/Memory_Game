@@ -6,9 +6,16 @@
 }
 body {
     display: flex;
-    min-height: 100vw;
+    min-height: 700px;
     align-items: center;
+    position: relative;
     justify-content: center;
+    background-image: url('https://resi.ze-robot.com/dl/ho/hope-this-is-allowed-i-modified-a-wallpaper-i-saw-here-link-to-original-in-comments-1920%C3%971080.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
     
 }
 .square .after-view img{
@@ -18,7 +25,6 @@ body {
 .game-container {
     height: 550px;
     width: 550px;
-    background-color: khaki;
     border-radius: 15px;
     padding: 30px;
 
@@ -51,7 +57,7 @@ h1 {
 .squares .square .view{
     width: 100%;
     height: 100%;
-    background-color: honeydew;
+    background-color: white;
     position: absolute;
     transition: transform .15s linear;
     backface-visibility: hidden;
@@ -69,4 +75,6 @@ h1 {
 .square:hover .before-view {
     transform: rotateY(180deg);
 }
+/*https://stackoverflow.com/questions/51885996/multiple-flip-boxes-but-only-flip-the-one-clicked-on8
+*/
 
