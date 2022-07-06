@@ -1,4 +1,6 @@
 * { 
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 
 }
@@ -6,7 +8,7 @@ body {
     display: flex;
     min-height: 700px;
     align-items: center;
-    position: relative;
+    position: center;
     justify-content: center;
     background-image: url('https://resi.ze-robot.com/dl/ho/hope-this-is-allowed-i-modified-a-wallpaper-i-saw-here-link-to-original-in-comments-1920%C3%971080.jpg');
     background-repeat: no-repeat;
@@ -17,12 +19,15 @@ body {
     
 }
 .square .after-view img{
-    max-width: 60px;
+    max-width: 80px;
 
 }
+/* .square .before-view img{
+    max-width: 30px; */
+
 .game-container {
-    height: 550px;
-    width: 550px;
+    height: 500px;
+    width: 500px;
     border-radius: 15px;
     padding: 25px;
     margin: 10px;
@@ -46,7 +51,7 @@ body {
     height: calc(100% / 4 - 5px);
     width: calc(100% / 4 - 5px);
     position: relative;
-    perspective: 500px;
+    perspective: 800px;
     transform-style: preserve-3d;
 }    
 h1 {
@@ -55,26 +60,25 @@ h1 {
 }
     
 
-.squares .square .view{
+.squares .square .view {
     width: 100%;
     height: 100%;
     background-color: black;
     position: absolute;
-    transition: transform .15s linear;
+    transition: transform .20s linear;
     backface-visibility: hidden;
     pointer-events: none;
     user-select: none;
-    box-shadow: 5px;
 }
 /* https://www.w3schools.com/css/css3_transitions.asp */
 .square .after-view {
     /* display: none; */
     transform: rotateY(-180deg);
 }
-.square:hover .after-view {
+.square.flip .after-view {
     transform: rotateY(0);
 }
-.square:hover .before-view {
+.square.flip .before-view {
     transform: rotateY(180deg);
 }
 /*https://stackoverflow.com/questions/51885996/multiple-flip-boxes-but-only-flip-the-one-clicked-on8
@@ -84,7 +88,7 @@ button {
     color: white;
     font-size: 15px;
     border: 2px solid black;
-    margin: 25px;
+    margin: 20px;
     padding: 1rem 2rem;
     border-radius: 2rem;
     transition: 0.2s ease;
@@ -92,7 +96,34 @@ button {
 }
 button:hover {
     background: white;
-    color: aqua;
-    box-shadow: 0 0 75px black, 0 0 100px black;
+    color: palevioletred;
+    box-shadow: 0 0 25px white, 0 0 50px white;
 }
 /* https://css-tricks.com/how-to-create-neon-text-with-css/ */
+#game-timer {
+    color: white;
+    font-size: 2rem;
+}
+.square.shake{
+    animation: shake 0.30s ease-in-out;
+}
+@keyframes shake{
+    0%,
+    100%{
+        transform: translateX(0);
+    }
+    80%{
+        transform: translateX(8px);
+    }
+    60%{
+        transform: translateX(-8px);
+    }
+    40%{
+        transform: translateX(10px);
+    }
+    20%{
+        transform: translateX(-10px);
+    }
+
+}
+/* https://stackoverflow.com/questions/38132700/css-wiggle-shake-effect */
