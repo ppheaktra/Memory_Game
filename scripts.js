@@ -70,34 +70,34 @@ function shuffleCard () {
     });
 }
 shuffleCard();
-// when both matched its 
-// function matchCards (img1, img2) {
-//     if (img1 === img2){
-//         cardsMatched++; //increment matching cards value by 1
-//         if(cardsMatched == 8){
-//             setTimeout(()=> {
-//                 return shuffleCard();
+//when both matched its 
+function matchCards (img1, img2) {
+    if (img1 === img2){
+        cardsMatched++; //increment matching cards value by 1
+        if(cardsMatched == 8){
+            setTimeout(()=> {
+                return shuffleCard();
 
-//             }, 1200);
+            }, 1200);
             
-//         }
-//         firstCard.removeEventListener('click', flipCard)
-//         secondCard.removeEventListener('click', flipCard)
-//         firstCard = secondCard = '';
-//         return selectCard = false;
-//     } else {
-//         setTimeout(() => {
-//             firstCard.classList.add('shake')
-//             secondCard.classList.add('shake')
-//         }, 500);
-//         setTimeout(()=> {
-//             firstCard.classList.remove('shake', 'flip');
-//             secondCard.classList.remove('shake', 'flip');
-//             firstCard = secondCard = '';
-//             selectCard = false;
-//         }, 1200);
-//     }
-// }
+        }
+        firstCard.removeEventListener('click', flipCard)
+        secondCard.removeEventListener('click', flipCard)
+        firstCard = secondCard = '';
+        return selectCard = false;
+    } else {
+        setTimeout(() => {
+            firstCard.classList.add('shake')
+            secondCard.classList.add('shake')
+        }, 500);
+        setTimeout(()=> {
+            firstCard.classList.remove('shake', 'flip');
+            secondCard.classList.remove('shake', 'flip');
+            firstCard = secondCard = '';
+            selectCard = false;
+        }, 1200);
+    }
+}
 // removeCards();
 
 // function removeCards() {
