@@ -35,7 +35,7 @@ const timeCount = () => {
 //         })
 // //        console.log(squares)
 //     }
-
+// function flip cards
 function flipCard(e){
     setTimeout(timeCount, 1000)
     let chosenCard = e.target;
@@ -55,7 +55,7 @@ function flipCard(e){
     }
 
 }
-
+// shuffle cards when restart the game
 function shuffleCard () {
     cardsMatched = 0;
     firstCard = secondCard = '';
@@ -70,49 +70,49 @@ function shuffleCard () {
     });
 }
 shuffleCard();
+// when both matched its 
+// function matchCards (img1, img2) {
+//     if (img1 === img2){
+//         cardsMatched++; //increment matching cards value by 1
+//         if(cardsMatched == 8){
+//             setTimeout(()=> {
+//                 return shuffleCard();
 
-function matchCards (img1, img2) {
-    if (img1 === img2){
-        cardsMatched++; //increment matching cards value by 1
-        if(cardsMatched == 8){
-            setTimeout(()=> {
-                return shuffleCard();
-
-            }, 1200);
+//             }, 1200);
             
-        }
-        firstCard.removeEventListener('click', flipCard)
-        secondCard.removeEventListener('click', flipCard)
-        firstCard = secondCard = '';
-        return selectCard = false;
-    } else {
-        setTimeout(() => {
-            firstCard.classList.add('shake')
-            secondCard.classList.add('shake')
-        }, 500);
-        setTimeout(()=> {
-            firstCard.classList.remove('shake', 'flip');
-            secondCard.classList.remove('shake', 'flip');
-            firstCard = secondCard = '';
-            selectCard = false;
-        }, 1200);
-    }
-}
-removeCards();
+//         }
+//         firstCard.removeEventListener('click', flipCard)
+//         secondCard.removeEventListener('click', flipCard)
+//         firstCard = secondCard = '';
+//         return selectCard = false;
+//     } else {
+//         setTimeout(() => {
+//             firstCard.classList.add('shake')
+//             secondCard.classList.add('shake')
+//         }, 500);
+//         setTimeout(()=> {
+//             firstCard.classList.remove('shake', 'flip');
+//             secondCard.classList.remove('shake', 'flip');
+//             firstCard = secondCard = '';
+//             selectCard = false;
+//         }, 1200);
+//     }
+// }
+// removeCards();
 
-function removeCards() {
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
-    setTimeout(function()  {
-        firstCard.style.visibility = secondCard.style.visibility = 'hidden';
-        resetGame();
-    }, 500);
-}
-function resetGame() {
-    selectCard = false;
-    firstCard = null;
-    secondCard = null;
-}
+// function removeCards() {
+//     firstCard.removeEventListener('click', flipCard);
+//     secondCard.removeEventListener('click', flipCard);
+//     setTimeout(function()  {
+//         firstCard.style.visibility = secondCard.style.visibility = 'hidden';
+//         resetGame();
+//     }, 500);
+// }
+// function resetGame() {
+//     selectCard = false;
+//     firstCard = null;
+//     secondCard = null;
+// }
 
 
 
