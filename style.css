@@ -73,7 +73,6 @@ header {
 }
 /* https://www.w3schools.com/css/css3_transitions.asp */
 .square .after-view {
-    /* display: none; */
     transform: rotateY(-180deg);
 }
 .square.flip .after-view {
@@ -88,13 +87,16 @@ button {
     background: black;
     color: white;
     font-size: 15px;
+    width: 150px;
+    text-transform: uppercase;
+    font-weight: bold;
     border: 2px solid black;
-    margin: 20px;
-    text-align: center;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 2rem;
     transition: 0.2s ease;
     cursor: pointer;
+    margin-left: 200px;
     
 }
 button:hover {
@@ -108,9 +110,10 @@ button:hover {
     text-align: center;
     display: flex;
     font-size: 30px;
+    margin-left: 250px;
 }
 .square.shake{
-    animation: shake 0.30s ease-in-out;
+    animation: shake 0.12s ease-in-out;
 }
 @keyframes shake{
     0%,
@@ -124,10 +127,10 @@ button:hover {
         transform: translateX(-8px);
     }
     40%{
-        transform: translateX(10px);
+        transform: translateX(13px);
     }
     20%{
-        transform: translateX(-10px);
+        transform: translateX(-13px);
     }
 
 }
