@@ -8,22 +8,17 @@ let selectCard = false;
 let cardsMatched = 0;
 
 //let time = 0;
-let minutes = 00;
+let minutes = 0;
 let seconds = 40;
 const minDiv = document.querySelector('#minutes')
-//console.log(minDiv)
 minDiv.innerText = minutes;
 const secDiv = document.querySelector('#seconds')
-secDiv.innerText = seconds
+secDiv.innerText = seconds;
 const timeCount = () => {
-    seconds -= 1
+    seconds -= 1;
     secDiv.innerText = ""
     secDiv.innerText = seconds;
 }
-
-
-
-
 
 
 //     for(let i = 0; i < squares.length; i++) {
@@ -89,13 +84,13 @@ function matchCards (img1, img2) {
         setTimeout(() => {
             firstCard.classList.add('shake')
             secondCard.classList.add('shake')
-        }, 500);
+        }, 700);
         setTimeout(()=> {
             firstCard.classList.remove('shake', 'flip');
             secondCard.classList.remove('shake', 'flip');
             firstCard = secondCard = '';
             selectCard = false;
-        }, 1200);
+        }, 1000);
     }
 }
 // removeCards();
@@ -114,7 +109,9 @@ function matchCards (img1, img2) {
 //     secondCard = null;
 // }
 
-
+function startGame () {
+    
+}
 
 
 
@@ -137,4 +134,4 @@ squares.forEach(square => {
 //square.classList.add('flip')
 })
 //event listener for button to start the game 
-//restartBtn.addEventListener('click', startGame);
+restartBtn.addEventListener('click', startGame);
