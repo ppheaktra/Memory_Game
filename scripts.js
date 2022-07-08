@@ -11,56 +11,32 @@ let selectCard = false;
 let cardsMatched = 0;
 
 let minutes = 0;
-let seconds = 05;
+let seconds = 59;
 const minDiv = document.querySelector('#minutes')
 minDiv.innerText = minutes;
 const secDiv = document.querySelector('#seconds')
 secDiv.innerText = seconds;
-// const timeCount = () => {
-//     seconds -= 1;
-//     setInterval(() =>{
-//         secDiv.innerText = "";
-//         secDiv.innerText = seconds;
-//     }, 1000);
-    // secDiv.innerText = "";
-    // secDiv.innerText = `${seconds}`;
 
 //show message if player doesn't make it on time
 let displayMessage = (losingMessage) =>{
     message.innerText = losingMessage
     selectCard = true;
 }
-const play = () =>{
-    //timeCount ()
+
+const playGame = () =>{
     const timer = setInterval(() =>{
         seconds -= 1
-       
         if (seconds <= 0){
             clearInterval(timer)
         }
-        
         secDiv.innerText = "";
         secDiv.innerText = seconds;
     }, 1000);
-    // if (seconds < 0){
-    //     clearInterval(timer)
-    // }
-
-
-
-
-
-
-
-
-
 
 // function flip cards
 function flipCard(e){
-    // setTimeout(timeCount, 1000)
-    let chosenCard = e.target;
+    let chosenCard = e.target; // click event when player click on chosen cards
     chosenCard.classList.add('flip');
-
     if (chosenCard !== firstCard && !selectCard) {
         chosenCard.classList.add('flip');
         if(!firstCard) {
@@ -79,8 +55,8 @@ function flipCard(e){
 function shuffleCard () {
     cardsMatched = 0;
     firstCard = secondCard = '';
-    let imgArr =[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
-    imgArr.sort(() => Math.random() > 0.5 ? 1 : -1);
+    let imgArr =[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]; // order classes for each squares to shuffle
+    imgArr.sort(() => Math.random() > 0.5 ? 1 : -1); // get a random num
     squares.forEach((square, i)=>{
         square.classList.remove('flip')
         square.addEventListener('click', flipCard);
@@ -98,13 +74,14 @@ function matchCards (img1, img2) {
             setTimeout(()=> {
                 return shuffleCard();
         }, 1200);
-    }      
+    }  
+        // when 2 cards are matched remove event listener 
         firstCard.removeEventListener('click', flipCard)
         secondCard.removeEventListener('click', flipCard)
         firstCard = secondCard = '';
         return selectCard = false;
     } else {
-        setTimeout(() => {
+        setTimeout(() => { // square shake then flip when 2 cards not matched 
             firstCard.classList.add('shake')
             secondCard.classList.add('shake')
         }, 500);
@@ -122,9 +99,8 @@ function matchCards (img1, img2) {
 //     } 
 
 // }
-
 // remove both cards if they're matched
-function removeCards() {
+function removeCards () {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
     setTimeout(function()  {
@@ -133,31 +109,12 @@ function removeCards() {
 }
 
 
-
-// function resetGame() {
-//     selectCard = false;
-//     firstCard = null;
-//     secondCard = null;
-// }
-
-// function startGame () {
-//     if(click==)
-// }
-
-    // squares.forEach((firstCard, index) =>{
-    //     firstCard[index] = null;
-    // });
-    // squares.forEach((square) =>{
-    //      square.innerText = "";
-        // selectCard = false;
-        //let imgCard = square.querySelector('img')
-        //imgCard.src = `images/img-${imgArr[index]}.png`;  
-
 //event listener for each squares turnable when clicks
 squares.forEach(square => {
     square.addEventListener('click', flipCard);
 
 })
 
-}//event listener for button to start the game 
-restartBtn.addEventListener('click', play);
+}
+//event listener for button to start the game 
+restartBtn.addEventListener('click', playGame);
