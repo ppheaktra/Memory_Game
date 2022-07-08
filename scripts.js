@@ -18,15 +18,12 @@ const secDiv = document.querySelector('#seconds')
 secDiv.innerText = seconds;
 
 //show message if player doesn't make it on time
-
 function displayMessage(message) {
     if (seconds <= 0) {
         clearInterval(timer)
    
     }
 }
-
-
 
 const playGame = () =>{
     const timer = setInterval(() =>{
@@ -107,7 +104,7 @@ function removeCards () {
         firstCard.style.visibility = secondCard.style.visibility = 'hidden';
     }, 1000);
 }
-
+removeCards();
 //event listener for each squares turnable when clicks
 squares.forEach(square => {
     square.addEventListener('click', flipCard);
