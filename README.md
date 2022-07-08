@@ -17,14 +17,22 @@ This game is provided 16 squares with 8 different emojis that hidden in each box
 - HTML
 ***
 ## *Screenshot*
-![image](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.rJv9xJ0yV3HrEvKTQwOE9gHaFj%26pid%3DApi&f=1)
+![image](https://imgur.com/B96pwbD)
 ***
 ## *Trello*
 [Trello Board](https://trello.com/b/5lkS5tGs/project-1)
 ***
 ## *Credits*
-Markdown Cheatsheet: [Github](https://github.com)
-Picture: [DuckDuckGo Search](https://duckduckgo.com)
+#### Markdown Cheatsheet: [Github](https://github.com)
+
+#### Stack Overflow: [StackOverFlow](https://stackoverflow.com)
+
+#### MDN: [MDN](https://developer.mozilla.org)
+
+#### W3school: [W3school](https://w3schools.com)
+
+
+
 
 
 

@@ -20,19 +20,12 @@ secDiv.innerText = seconds;
 
 //show message if player doesn't make it on time
 
-function displayMessage() {
-   if (cardsMatched == 8)
-    message.innerText= "Yay You made it!";
-
-
-    time = setInterval(() => {
-        seconds -= 1;
-        if (seconds <= 0) {
-            clearInterval(timer)
-            result.style.visibility="visible";
-            message.innerHTML= "TRY AGAIN";
-        }
-    })
+function displayMessage(message) {
+    if (seconds <= 0) {
+        clearInterval(timer)
+    message.innerHTML= "TRY AGAIN";
+   
+    }
 }
 
 
@@ -69,7 +62,7 @@ function flipCard(e){
 function shuffleCard () {
     cardsMatched = 0;
     firstCard = secondCard = '';
-    let imgArr =[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]; // order classes for each squares to shuffle
+    let imgArr =[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
     imgArr.sort(() => Math.random() > 0.5 ? 1 : -1); // get a random num
     squares.forEach((square, i)=>{
         square.classList.remove('flip')
