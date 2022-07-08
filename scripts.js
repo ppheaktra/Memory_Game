@@ -6,12 +6,11 @@ const squares = document.querySelectorAll('.square')
 const result = document.querySelector('#result')
 const message = document.querySelector('#message')
 
-const overlay = document.querySelector('.overlay')
-const reset = document.querySelector('.reset')
 
 let firstCard , secondCard;
 let selectCard = false;
 let cardsMatched = 0;
+let time = 0;
 let minutes = 0;
 let seconds = 59;
 const minDiv = document.querySelector('#minutes')
@@ -20,18 +19,27 @@ const secDiv = document.querySelector('#seconds')
 secDiv.innerText = seconds;
 
 //show message if player doesn't make it on time
-let displayMessage = () => {
-    if (seconds <= 0) {
-        clearInterval(timer);
-        overlay.classList.remove('hidden');
-    }700;
+
+function displayMessage() {
+   if (cardsMatched == 8)
+    message.innerText= "Yay You made it!";
+
+
+    time = setInterval(() => {
+        seconds -= 1;
+        if (seconds <= 0) {
+            clearInterval(timer)
+            result.style.visibility="visible";
+            message.innerHTML= "TRY AGAIN";
+        }
+    })
 }
 
 
 
 const playGame = () =>{
     const timer = setInterval(() =>{
-        seconds -= 1
+        seconds -= 1;
         if (seconds <= 0){
             clearInterval(timer)
         }
@@ -76,7 +84,7 @@ shuffleCard();
 function matchCards (img1, img2) {
     if (img1 === img2){
         cardsMatched++; //increment matching cards value by 1
-        if(cardsMatched == 8){ // if 8 images all matched then its shuffled
+        if(cardsMatched == 8){ // if 8 images all matched then its flipped n shuffled
             setTimeout(()=> {
                 return shuffleCard();
         }, 1200);
@@ -90,7 +98,7 @@ function matchCards (img1, img2) {
         setTimeout(() => { // square shake then flip when 2 cards not matched 
             firstCard.classList.add('shake')
             secondCard.classList.add('shake')
-        }, 500);
+        }, 600);
         setTimeout(()=> {
             firstCard.classList.remove('shake', 'flip');
             secondCard.classList.remove('shake', 'flip');
@@ -106,7 +114,7 @@ function removeCards () {
     secondCard.removeEventListener('click', flipCard);
     setTimeout(function()  {
         firstCard.style.visibility = secondCard.style.visibility = 'hidden';
-    }, 500);
+    }, 1000);
 }
 
 //event listener for each squares turnable when clicks
