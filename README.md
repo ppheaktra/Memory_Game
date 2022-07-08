@@ -17,7 +17,7 @@ This game is provided 16 squares with 8 different emojis that hidden in each box
 - HTML
 ***
 ## *Screenshot*
-![image](https://imgur.com/B96pwbD)
+![image](https://i.imgur.com/RDkDVv9.png)
 ***
 ## *Trello*
 [Trello Board](https://trello.com/b/5lkS5tGs/project-1)

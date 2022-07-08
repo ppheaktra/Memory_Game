@@ -23,7 +23,6 @@ secDiv.innerText = seconds;
 function displayMessage(message) {
     if (seconds <= 0) {
         clearInterval(timer)
-    message.innerHTML= "TRY AGAIN";
    
     }
 }
