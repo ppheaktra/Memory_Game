@@ -24,8 +24,8 @@ body {
     max-width: 40px; 
 }
 .game-container {
-    height: 550px;
-    width: 550px;
+    height: 500px;
+    width: 500px;
     border-radius: 15px;
     padding: 35px;
     margin: 15px;
@@ -57,7 +57,8 @@ header {
     position: relative;
     color: whitesmoke;
     font-family: 'Neonderthaw', cursive;
-    font-size: 35px;
+    text-shadow: 0 0 0.1em whitesmoke, 0 0 0.2em whitesmoke, 0 0 0.3em whitesmoke;
+    font-size: 40px;
     margin: 20px;
 }
 .squares .before-view {
