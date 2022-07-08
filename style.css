@@ -57,7 +57,7 @@ header {
     position: relative;
     color: whitesmoke;
     font-family: 'Neonderthaw', cursive;
-    text-shadow: 0 0 0.1em whitesmoke, 0 0 0.2em whitesmoke, 0 0 0.3em whitesmoke;
+    text-shadow: 0 0 0.1em whitesmoke, 0 0 0.2em aqua, 0 0 0.3em whitesmoke;
     font-size: 40px;
     margin: 20px;
 }

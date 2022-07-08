@@ -10,7 +10,6 @@ const message = document.querySelector('#message')
 let firstCard , secondCard;
 let selectCard = false;
 let cardsMatched = 0;
-let time = 0;
 let minutes = 0;
 let seconds = 59;
 const minDiv = document.querySelector('#minutes')
@@ -80,7 +79,7 @@ function matchCards (img1, img2) {
             setTimeout(()=> {
                 return shuffleCard();
         }, 1200);
-    }  
+    }
         // when 2 cards are matched remove event listener 
         firstCard.removeEventListener('click', flipCard)
         secondCard.removeEventListener('click', flipCard)
