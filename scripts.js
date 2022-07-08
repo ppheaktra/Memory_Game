@@ -6,10 +6,12 @@ const squares = document.querySelectorAll('.square')
 const result = document.querySelector('#result')
 const message = document.querySelector('#message')
 
+const overlay = document.querySelector('.overlay')
+const reset = document.querySelector('.reset')
+
 let firstCard , secondCard;
 let selectCard = false;
 let cardsMatched = 0;
-
 let minutes = 0;
 let seconds = 59;
 const minDiv = document.querySelector('#minutes')
@@ -18,10 +20,14 @@ const secDiv = document.querySelector('#seconds')
 secDiv.innerText = seconds;
 
 //show message if player doesn't make it on time
-let displayMessage = (losingMessage) =>{
-    message.innerText = losingMessage
-    selectCard = true;
+let displayMessage = () => {
+    if (seconds <= 0) {
+        clearInterval(timer);
+        overlay.classList.remove('hidden');
+    }700;
 }
+
+
 
 const playGame = () =>{
     const timer = setInterval(() =>{
@@ -93,12 +99,7 @@ function matchCards (img1, img2) {
         }, 1200);
     }
 }
-// function checkCard() {
-//     if (firstCard.getAttribute('name') === secondCard.getAttribute('name')) {
-//         removeCards();
-//     } 
 
-// }
 // remove both cards if they're matched
 function removeCards () {
     firstCard.removeEventListener('click', flipCard);
@@ -107,7 +108,6 @@ function removeCards () {
         firstCard.style.visibility = secondCard.style.visibility = 'hidden';
     }, 500);
 }
-
 
 //event listener for each squares turnable when clicks
 squares.forEach(square => {
