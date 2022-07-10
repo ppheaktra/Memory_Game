@@ -18,14 +18,7 @@ const secDiv = document.querySelector('#seconds')
 secDiv.innerText = seconds;
 
 //show message if player doesn't make it on time
-function displayMessage(message) {
-    if (seconds <= 0) {
-        clearInterval(timer)
-   
-    }
-}
-
-const playGame = () =>{
+const playGame = () => {
     const timer = setInterval(() =>{
         seconds -= 1;
         if (seconds <= 0){
@@ -86,7 +79,7 @@ function matchCards (img1, img2) {
         setTimeout(() => { // square shake then flip when 2 cards not matched 
             firstCard.classList.add('shake')
             secondCard.classList.add('shake')
-        }, 600);
+        }, 400);
         setTimeout(()=> {
             firstCard.classList.remove('shake', 'flip');
             secondCard.classList.remove('shake', 'flip');
@@ -96,15 +89,6 @@ function matchCards (img1, img2) {
     }
 }
 
-// remove both cards if they're matched
-function removeCards () {
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
-    setTimeout(function()  {
-        firstCard.style.visibility = secondCard.style.visibility = 'hidden';
-    }, 1000);
-}
-removeCards();
 //event listener for each squares turnable when clicks
 squares.forEach(square => {
     square.addEventListener('click', flipCard);
