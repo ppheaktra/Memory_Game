@@ -27,8 +27,8 @@ body {
     height: 500px;
     width: 500px;
     border-radius: 15px;
-    padding: 35px;
-    margin: 15px;
+    padding: 20px;
+    margin: 10px;
     align-items: center;
 
 }
@@ -109,7 +109,7 @@ button:hover {
     box-shadow: 0 0 25px white, 0 0 50px white;
 }
 /* https://css-tricks.com/how-to-create-neon-text-with-css/ */
-#game-timer {
+#timer {
     color: white;
     text-align: center;
     display: flex;
@@ -117,7 +117,7 @@ button:hover {
     margin-left: 250px;
 }
 .square.shake{
-    animation: shake 0.38s ease-in-out;
+    animation: shake 0.35s ease-in-out;
 }
 @keyframes shake{
     0%,
@@ -142,7 +142,7 @@ button:hover {
 /* https://stackoverflow.com/questions/38132700/css-wiggle-shake-effect */
 
 
-#result {
+ /* #result {
     position: absolute;
     top: 0;
     left: 0;
@@ -153,10 +153,19 @@ button:hover {
     background-color: black;
     opacity: 0.9;
     visibility: hidden;
-}
+} */
 #message {
-    font-size: 50px;
+    font-size: 35px;
     color: white;
+    font-family: 'Neonserthaw', cursive ;
+    text-shadow: 0 0 0.1em whitesmoke, 0 0 0.2em aqua, 0 0 0.3em whitesmoke;
+    text-align: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+
+    
+
 }
 h1 {
     font-size: 50px;
@@ -166,8 +175,9 @@ h1 {
     position: relative;
     margin: 20px;
 }
-.Click-Here {
+.clickBtn {
     padding: 20px;
     opacity: 0.8;
     margin-top: 1rem;
+    color: cyan;
 }
